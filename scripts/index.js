@@ -1,5 +1,5 @@
 const indicator = document.querySelector('.indicator');
-const items = document.querySelectorAll('ul li');
+const items = document.querySelectorAll('nav ul li');
 
 items.forEach((item) => {
     item.addEventListener('mouseenter', () => {
