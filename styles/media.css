@@ -1,0 +1,36 @@
+@media all and (max-width: 320px) {
+    body {
+        width: 320px !important;
+    }
+}
+
+
+@media all and (max-width: 768px) {
+    .notes-grid {
+        overflow: initial !important;
+        height: initial !important;
+        padding-right: 0 !important;
+    }
+
+    .add-note span,
+    .notification,
+    .user-greeting {
+        display: none;
+    }
+
+    .notes-grid>div {
+        aspect-ratio: initial !important;
+    }
+
+    .notes-grid>div .image {
+        height: 250px !important;
+    }
+
+    header, main {
+        width: 100% !important;
+    }
+
+    .nav-wrapper {
+        left: -100% !important;
+    }
+}

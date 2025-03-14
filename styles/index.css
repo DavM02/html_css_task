@@ -1,0 +1,411 @@
+@import url('./variables.css');
+@import url('./global.css');
+@import url('./helpers.css');
+@import url('./media.css');
+
+/* ♡ header ♡ */
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 15px 0;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    z-index: 5;
+}
+
+.fa-magnifying-glass,
+.fa-bell {
+    font-size: 20px;
+}
+
+header label {
+    cursor: pointer;
+    transition: opacity var(--transition) 0.5s;
+    margin-right: 20px;
+}
+
+header label:hover {
+    opacity: 70%;
+}
+
+header input,
+header .user-greeting {
+    text-transform: capitalize;
+}
+
+header input::placeholder {
+    color: var(--text-black);
+}
+
+header .user-info {
+    gap: 20px;
+}
+
+header .user-avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+}
+
+header .notification {
+    position: relative;
+    cursor: pointer;
+}
+
+header .notification::after {
+    content: attr(data-notification-count);
+    border-radius: 50%;
+    text-align: center;
+    display: grid;
+    place-content: center;
+    height: 16px;
+    font-size: 13px;
+    aspect-ratio: 1;
+    color: var(--white);
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: var(--notification-bg);
+}
+
+/* ♡ fixed-navbar ♡ */
+
+.nav-wrapper {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    top: 0;
+    min-width: 250px;
+    background-color: var(--blue-violet);
+}
+
+.loading-info {
+    height: 80px;
+    width: 100%;
+    background-color: var(--purple);
+    gap: 20px;
+    padding: 0 25px;
+}
+
+
+.name-loading {
+    width: 50%;
+    height: 9px;
+    background-color: var(--blue-violet);
+    border-radius: 5px;
+}
+
+.avatar-loading {
+    width: 40px;
+    height: 40px;
+    background-color: var(--blue-violet);
+    border-radius: 50%;
+}
+
+nav {
+    position: relative;
+    padding: 40px 25px;
+}
+
+nav .indicator {
+    position: absolute;
+    top: 35px;
+    z-index: -1;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    transition: var(--transition) transform 0.5s;
+}
+
+nav .indicator::before {
+    position: absolute;
+    content: "";
+    left: 5px;
+    top: 0;
+    height: 110%;
+    background-color: var(--white);
+    border-radius: 5px;
+    width: 3px;
+}
+
+nav .indicator::after {
+    content: "";
+    background-image: url(../assets/vector.svg);
+    position: absolute;
+    content: "";
+    right: -52px;
+    background-size: contain;
+    height: 100%;
+    background-repeat: no-repeat;
+    top: 10px;
+    width: 110px;
+    transform: rotate(88deg);
+}
+
+nav ul {
+    gap: 23px;
+}
+
+nav li i {
+    color: var(--white);
+    font-size: 20px;
+}
+
+nav li {
+    cursor: pointer;
+    gap: 20px;
+}
+
+nav li span {
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+.filter-types {
+    padding: 40px 0;
+    margin: 0 25px;
+    border-top: 1px solid rgba(8, 8, 8, 0.213);
+    border-bottom: 1px solid rgba(8, 8, 8, 0.213);
+}
+
+.filter-types ul {
+    gap: 15px;
+}
+
+.filter-types li {
+    cursor: pointer;
+    list-style: initial !important;
+    list-style-position: inside !important;
+    transition: var(--transition) opacity 0.5s;
+}
+
+.filter-types li:hover {
+    opacity: 60%;
+}
+
+.filter-types span {
+    color: var(--white);
+    text-transform: capitalize;
+    font-weight: 100;
+    font-size: 13.5px;
+}
+
+.filter-types li:not([data-type]) span {
+    margin-left: 5px;
+}
+
+.filter-types li:not([data-type])::marker {
+    content: "+";
+    color: var(--white);
+}
+
+
+.filter-types [data-type="personal"]::marker {
+    color: var(--personal-type)
+}
+
+.filter-types [data-type="business"]::marker {
+    color: var(--business-type)
+}
+
+.filter-types [data-type="projects"]::marker {
+    color: var(--projects-type)
+}
+
+.socials i {
+    font-size: 15px;
+    color: var(--white);
+    transition: var(--transition) color 0.5s;
+}
+
+.socials {
+    gap: 10px;
+}
+
+.socials a {
+    cursor: pointer;
+}
+
+.socials a:hover i {
+    color: var(--light-gray);
+}
+
+.nav-footer {
+    padding: 40px 25px;
+}
+
+.nav-footer p {
+    margin-top: 10px;
+    color: var(--light-gray);
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+/* ♡ main ♡ */
+
+#notes {
+    padding: 60px 0px;
+}
+
+
+.filter,
+.row:has(.filter) {
+    gap: 20px;
+}
+
+.filter span {
+    text-transform: capitalize;
+    font-weight: 500;
+    transition: color 0.5s var(--transition);
+}
+
+.filter li {
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px max(10px, 1.5vw);
+    transition: background-color 0.5s var(--transition);
+}
+
+.filter li:hover,
+.filter li.active {
+    background-color: var(--blue-violet);
+
+}
+
+.filter li:hover span,
+.filter li.active span {
+    color: var(--white);
+}
+
+.add-note {
+    gap: 10px;
+}
+
+.add-note button {
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    font-weight: 800;
+    padding: 10px;
+    color: var(--blue-violet);
+    font-style: 20px;
+    border: 1px solid var(--blue-violet);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.add-note span {
+    color: var(--blue-violet);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.add-note span::first-letter {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.notes-grid {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(max(230px, calc(100% / 4 - 40px)), 1fr));
+    height: 100vh;
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+    padding-right: 30px;
+    margin-top: 30px;
+    /* for firefox */
+    /* scrollbar-width: thin;
+    scrollbar-color: var(--blue-violet) transparent; */
+}
+
+.notes-grid ul,
+.notes-grid ol {
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.notes-grid ul li {
+    list-style: initial;
+}
+
+.notes-grid ol li::marker {
+    list-style: initial;
+    color: var(--text-gray);
+}
+
+.notes-grid>div {
+    background-color: var(--white);
+    aspect-ratio: 1;
+    box-shadow: var(--shadow);
+    border-radius: 3px;
+    padding: 15px 20px;
+}
+
+.notes-grid div span {
+    opacity: 60%;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.notes-grid p {
+    display: inline;
+    color: var(--text-gray);
+    font-size: 15px;
+    letter-spacing: 0.5px;
+
+}
+
+.notes-grid div h3,
+.notes-grid div h4 {
+    position: relative;
+    margin: 10px 0 10px 15px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.notes-grid div h4 {
+    font-size: 25px;
+}
+
+.notes-grid .title::after {
+    position: absolute;
+    top: 7px;
+    left: -15px;
+    width: 8px;
+    height: 8px;
+    content: "";
+    border-radius: 50%;
+
+}
+
+.notes-grid [data-type="personal"]::after {
+    background-color: var(--personal-type)
+}
+
+.notes-grid [data-type="business"]::after {
+    background-color: var(--business-type)
+}
+
+.notes-grid [data-type="projects"]::after {
+    background-color: var(--projects-type)
+}
+
+.notes-grid .title::first-letter,
+.notes-grid .text-wrapper::first-letter,
+.notes-grid li::first-letter {
+    text-transform: uppercase !important;
+}
+
+.notes-grid div .image {
+    height: 70%;
+    width: 100%;
+    overflow: hidden;
+}

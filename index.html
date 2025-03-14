@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My notes</title>
+    <meta name="description" content="An app for making notes">
+    <meta name="author" content="Dav">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://kit.fontawesome.com/6c1fb36cca.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="navbar-open">
+
+    <!-- ♡ header ♡ -->
+
+    <header>
+        <div class="container">
+            <div class="row s-between-x center-y">
+                <div class="row center-y">
+                    <label for="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </label>
+                    <input type="search" id="search" placeholder="search" />
+                </div>
+                <div class="user-info row center-y">
+                    <div class="user-avatar">
+                        <img alt="avatar"
+                            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                    </div>
+                    <span class="user-greeting">hello, peter!</span>
+                    <div class="notification" data-notification-count="4">
+                        <i class="fa-regular fa-bell"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ♡ fixed-navbar ♡ -->
+
+        <div class="nav-wrapper column s-between-x">
+
+            <div class="nav-main">
+                <div class="loading-info row center-y">
+                    <div class="avatar-loading"></div>
+                    <div class="name-loading"></div>
+                </div>
+                <nav>
+
+                    <div class="indicator"></div>
+
+                    <!-- ♡ data-indexes are used for transforming appropriately indicator element when hovering list-item ♡ -->
+
+                    <ul class="column">
+                        <li class="row center-y" data-index="1">
+                            <i class="fa-solid fa-table-cells-large"></i>
+                            <span>overview</span>
+                        </li>
+                        <li class="row center-y" data-index="2">
+                            <i class="fa-solid fa-list-check"></i>
+                            <span>tasks</span>
+                        </li>
+                        <li class="row center-y" data-index="3">
+                            <i class="fa-solid fa-file"></i>
+                            <span>documents</span>
+                        </li>
+                        <li class="row center-y" data-index="4">
+                            <i class="fa-solid fa-book"></i>
+                            <span>notes</span>
+                        </li>
+                        <li class="row center-y" data-index="5">
+                            <i class="fa-solid fa-chart-simple"></i>
+                            <span>output</span>
+                        </li>
+                        <li class="row center-y" data-index="6">
+                            <i class="fa-solid fa-headset"></i>
+                            <span>support</span>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="filter-types">
+                    <ul class="column">
+                        <li data-type="projects">
+                            <span>projects</span>
+                        </li>
+                        <li data-type="business">
+                            <span>business</span>
+                        </li>
+                        <li data-type="personal">
+                            <span>personal</span>
+                        </li>
+                        <li>
+                            <span>add new</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-footer">
+                <ul class="socials row center-y">
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                </ul>
+                <p>2025. All rights reserved.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ♡ main ♡ -->
+
+    <main>
+        <section id="notes">
+            <div class="container">
+                <div class="row s-between-x">
+                    <ul class="filter row wrap">
+                        <li class="active">
+                            <span>all</span>
+                        </li>
+                        <li>
+                            <span>projects</span>
+                        </li>
+                        <li>
+                            <span>business</span>
+                        </li>
+                        <li>
+                            <span>personal</span>
+                        </li>
+                    </ul>
+                    <div class="add-note row center-y">
+                        <button type="button">
+                            +
+                        </button>
+                        <span>add new note</span>
+                    </div>
+                </div>
+                <div class="notes-grid">
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <div class="text-wrapper">
+                            <p>being the savage's bowsman, that is, the person who pulled the bow-oar.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h4 class="title" data-type="personal">being the savage's bowsman, that is, the person who
+                            pulled the bow-oar.</h4>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">the monkey-rope</h3>
+                        <ul class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1735832489994-96adfc4db2dd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">new workplace!</h3>
+
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="workplace" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <div class="text-wrapper">
+                            <p>being the savage's bowsman, that is, the person who pulled the bow-oar.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1632133940123-3e9f5e60c6cc?q=80&w=2268&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h4 class="title" data-type="personal">being the savage's bowsman, that is, the person who
+                            pulled the bow-oar.</h4>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">the monkey-rope</h3>
+                        <ul class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">new workplace!</h3>
+
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="workplace" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1735832489994-96adfc4db2dd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h4 class="title" data-type="personal">being the savage's bowsman, that is, the person who
+                            pulled the bow-oar.</h4>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <div class="text-wrapper">
+                            <p>being the savage's bowsman, that is, the person who pulled the bow-oar.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">the monkey-rope</h3>
+                        <ul class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">new workplace!</h3>
+
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="workplace" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <div class="text-wrapper">
+                            <p>being the savage's bowsman, that is, the person who pulled the bow-oar.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h4 class="title" data-type="personal">being the savage's bowsman, that is, the person who
+                            pulled the bow-oar.</h4>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <div class="text-wrapper">
+                            <p>being the savage's bowsman, that is, the person who pulled the bow-oar.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h4 class="title" data-type="personal">being the savage's bowsman, that is, the person who
+                            pulled the bow-oar.</h4>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">the monkey-rope</h3>
+                        <ul class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">new workplace!</h3>
+
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="workplace" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1735832489994-96adfc4db2dd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <div class="text-wrapper">
+                            <p>being the savage's bowsman, that is, the person who pulled the bow-oar.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1735832489994-96adfc4db2dd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h4 class="title" data-type="personal">being the savage's bowsman, that is, the person who
+                            pulled the bow-oar.</h4>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">the monkey-rope</h3>
+                        <ul class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1632133940123-3e9f5e60c6cc?q=80&w=2268&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">new workplace!</h3>
+
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="workplace" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1632133940123-3e9f5e60c6cc?q=80&w=2268&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">new workplace!</h3>
+
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="workplace" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <div class="text-wrapper">
+                            <p>being the savage's bowsman, that is, the person who pulled the bow-oar.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h4 class="title" data-type="personal">being the savage's bowsman, that is, the person who
+                            pulled the bow-oar.</h4>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">the monkey-rope</h3>
+                        <ul class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">new workplace!</h3>
+
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="workplace" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1632133940123-3e9f5e60c6cc?q=80&w=2268&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">new workplace!</h3>
+
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="workplace" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1735832489994-96adfc4db2dd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <div class="text-wrapper">
+                            <p>being the savage's bowsman, that is, the person who pulled the bow-oar.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h4 class="title" data-type="personal">being the savage's bowsman, that is, the person who
+                            pulled the bow-oar.</h4>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">the monkey-rope</h3>
+                        <ul class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">new workplace!</h3>
+
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="workplace" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">new workplace!</h3>
+
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="workplace" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <div class="text-wrapper">
+                            <p>being the savage's bowsman, that is, the person who pulled the bow-oar.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h4 class="title" data-type="personal">being the savage's bowsman, that is, the person who
+                            pulled the bow-oar.</h4>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">the monkey-rope</h3>
+                        <ul class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1632133940123-3e9f5e60c6cc?q=80&w=2268&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">new workplace!</h3>
+
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="workplace" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1735832489994-96adfc4db2dd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">new workplace!</h3>
+
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="workplace" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1632133940123-3e9f5e60c6cc?q=80&w=2268&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <ol class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="projects">the monkey-rope</h3>
+                        <div class="text-wrapper">
+                            <p>being the savage's bowsman, that is, the person who pulled the bow-oar.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1632133940123-3e9f5e60c6cc?q=80&w=2268&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h4 class="title" data-type="personal">being the savage's bowsman, that is, the person who
+                            pulled the bow-oar.</h4>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">the monkey-rope</h3>
+                        <ul class="column">
+                            <li>
+                                <p>
+                                    being the bowsman
+                                </p>
+                            </li>
+                            <li>
+                                <p>the person who pulled the bow-oar</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="business">new workplace!</h3>
+
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="workplace" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="date">23 june, 2025</span>
+                        <h3 class="title" data-type="personal">vacation!</h3>
+                        <div class="image">
+                            <img src="https://images.unsplash.com/photo-1628790809017-56a1a5c6e41f?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="vacation" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts/index.js"></script>
+
+</body>
+
+</html>

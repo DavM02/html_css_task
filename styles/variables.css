@@ -1,0 +1,18 @@
+:root {
+    --white: #fbfbfb;
+    --purple:   #6c63be;
+    --gray-blue: #858499;
+    --light-gray: #d0d0d0;
+    --blue-violet: #8981d8;
+    --lavender: #d8d8ea;
+    --warm-gray: #c3c1be;
+    --main-bg: #ecececb9;
+    --notification-bg: rgb(206, 91, 70);
+    --transition: cubic-bezier(.81, .51, .5, 1.36);
+    --text-black: rgb(39, 39, 39);
+    --text-gray: rgba(111, 111, 111, 0.996);
+    --shadow:  rgba(0, 0, 0, 0.048) 0px 4px 12px;
+    --personal-type: rgb(112, 182, 236);
+    --business-type: rgb(227, 86, 51);
+    --projects-type: rgb(244, 201, 46);
+}
