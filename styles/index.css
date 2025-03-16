@@ -112,7 +112,7 @@ nav {
     padding: 40px 25px;
 }
 
-nav .indicator {
+.indicator {
     position: absolute;
     top: 35px;
     z-index: -1;
@@ -122,7 +122,7 @@ nav .indicator {
     transition: var(--transition) transform 0.5s;
 }
 
-nav .indicator::before {
+.indicator::before {
     position: absolute;
     content: "";
     left: 5px;
@@ -133,7 +133,7 @@ nav .indicator::before {
     width: 3px;
 }
 
-nav .indicator::after {
+.indicator::after {
     content: "";
     background-image: url(../assets/vector.svg);
     position: absolute;
